@@ -1,0 +1,46 @@
+package Heroes.HeroBase;
+
+public class Hero {
+    public static int healthPoint;
+    public static int energy;
+    public static double damageModifier;
+    public static double armorModifier;
+     public Hero(){
+        healthPoint = 1000;
+        energy = 5;
+        damageModifier = 100;
+        armorModifier = 0;
+    }
+
+    public static int getHealthPoint() {
+        return healthPoint;
+    }
+
+    public static int getEnergy() {
+        return energy;
+    }
+
+    public static double getDamageModifier() {
+        return damageModifier;
+    }
+
+    public static double getArmorModifier() {
+        return armorModifier;
+    }
+
+    public static void setHealthPoint(int healthPoint) {
+        Hero.healthPoint = healthPoint;
+    }
+
+    public static void setEnergy(int energy) {
+        Hero.energy = energy;
+    }
+
+    public static void setDamageModifier(double damageModifier) {
+        Hero.damageModifier = damageModifier;
+    }
+
+    public static void setArmorModifier(double armorModifier) {
+        Hero.armorModifier = armorModifier;
+    }
+}

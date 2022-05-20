@@ -1,0 +1,97 @@
+package Cards.cardbase;
+
+public class Card{
+    public static int energyCost;
+    public static int provision;
+    //public static string cardType;
+    public boolean isInPlayStack;
+    public boolean isInHand;
+    public boolean isInUsedStack;
+    public boolean isSelected;
+    public boolean isInDeck;
+
+     public Card(){//ustawia tylko boole, energia i prowizja jest indywidualna
+        isInDeck=false;
+        isInHand=false;
+        isInPlayStack=false;
+        isInUsedStack=false;
+        isSelected=false;
+    }
+    boolean checkUsable(){
+        if (this.isInDeck&&this.isInHand){
+            return  true;
+        }
+        else{
+            return false;
+        }
+    }
+    boolean checkCost(Hero hero){
+        if (Hero.getEnergy()<this.energyCost) return false;
+
+        return true;
+    }
+    void selectCard(Hero hero){
+        this.checkUsable();
+        checkCost(hero);
+        setSelected(true);
+    }
+
+
+    public void setInDeck(boolean inDeck) {
+        isInDeck = inDeck;
+    }
+
+    public void setInHand(boolean inHand) {
+        isInHand = inHand;
+    }
+
+    public void setInUsedStack(boolean inUsedStack) {
+        isInUsedStack = inUsedStack;
+    }
+
+    public void setInPlayStack(boolean inPlayStack) {
+        isInPlayStack = inPlayStack;
+    }
+
+    public static void setProvision(int provision) {
+        Card.provision = provision;
+    }
+
+    public static void setEnergyCost(int energyCost) {
+        Card.energyCost = energyCost;
+    }
+
+    public boolean isInUsedStack() {
+        return isInUsedStack;
+    }
+
+    public void setSelected(boolean selected) {
+        isSelected = selected;
+    }
+
+    public boolean isSelected() {
+        return isSelected;
+    }
+
+    public boolean isInDeck() {
+        return isInDeck;
+    }
+
+    public boolean isInHand() {
+        return isInHand;
+    }
+
+    public boolean isInPlayStack() {
+        return isInPlayStack;
+    }
+
+    public static int getProvision() {
+        return provision;
+    }
+
+    public static int getEnergyCost() {
+        return energyCost;
+    }
+
+
+}
