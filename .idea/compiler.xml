@@ -2,8 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <excludeFromCompile>
-      <directory url="file://$PROJECT_DIR$/src/Heroes" includeSubdirectories="false" />
-      <directory url="file://$PROJECT_DIR$/src/Cards" includeSubdirectories="false" />
+      <directory url="file://$PROJECT_DIR$/Heroes" includeSubdirectories="false" />
+      <directory url="file://$PROJECT_DIR$/Cards" includeSubdirectories="false" />
     </excludeFromCompile>
     <annotationProcessing>
       <profile name="Maven default annotation processors profile" enabled="true">
