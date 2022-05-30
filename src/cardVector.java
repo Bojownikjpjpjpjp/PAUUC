@@ -1,11 +1,11 @@
-import attackCards.attackCardBase;
-import spellCards.spellCardBase;
-import cardbase.*;
+import AttackCards.AttackCardBase;
+import SpellCardsOffensive.OffensiveSpellCardBase;
+import SpellCardsDefensive.DefensiveSpellCardBase;
 
 public class cardVector {
     int[] intValues = new int[4];
     double[] doubleValues = new double[1];
-    String[] strings = new String[2];
+    String[] strings = new String[3];
     boolean[] bools = new boolean[5];
 
     public void setIntValues(int[] intValues) {
@@ -28,9 +28,10 @@ public class cardVector {
     public void setStrings(String[] strings) {
         this.strings = strings;
     }
-    public void setStrings(String description, String imageLocalization) {
+    public void setStrings(String description, String imageLocalization, String cardName) {
         this.strings[0] = description;
         this.strings[1] = imageLocalization;
+        this.strings[2] = cardName;
     }
 
     public void setBools(boolean[] bools) {
@@ -44,16 +45,22 @@ public class cardVector {
         this.bools[4] = isSelected;
     }
 
-    public void setAttackCardValues(attackCardBase p){
+    public void setAttackCardValues(AttackCardBase p){
         this.setIntValues(p.getEnergyCost(),p.getProvision(),p.getTarget(),p.getDamage());
         this.setDoubleValues(0.0);
-        this.setStrings(p.getDescription(),p.getImageLocalization());
+        this.setStrings(p.getDescription(),p.getImageLocalization(), p.getCardName());
         this.setBools(true,true,false,false,false);
     }
-    public void setSpellCardValues(spellCardBase p){
+    public void setOffensiveSpellCardValues(OffensiveSpellCardBase p){
         this.setIntValues(p.getEnergyCost(),p.getProvision(),p.getTarget(),p.getDamage());
         this.setDoubleValues(p.getManaCost());
-        this.setStrings(p.getDescription(),p.getImageLocalization());
+        this.setStrings(p.getDescription(),p.getImageLocalization(), p.getCardName());
+        this.setBools(true,true,false,false,false);
+    }
+    public void setDefensiveSpellCardValues(DefensiveSpellCardBase p){
+        this.setIntValues(p.getEnergyCost(),p.getProvision(),p.getTarget(),p.getArmor());
+        this.setDoubleValues(p.getManaCost());
+        this.setStrings(p.getDescription(),p.getImageLocalization(), p.getCardName());
         this.setBools(true,true,false,false,false);
     }
     // TODO: 25.05.2022 można zmodyfikować getter, zęby zwracał tylko część tablicy 

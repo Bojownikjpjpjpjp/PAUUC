@@ -1,0 +1,20 @@
+!!!New fight started!!!
+player 1 played the fireball card
+player 2 played the fireball card
+player 1 played the force field card
+player 2 played the force field card
+player 2 played the fireball card
+player 1 played the force field card
+player 1 played the punch card
+player 1 played the punch card
+player 1 played the punch card
+player 1 played the punch card
+player 1 played the punch card
+player 2 played the fireball card
+player 2 played the fireball card
+player 2 played the punch card
+player 2 played the punch card
+player 2 played the punch card
+player 1 played the fireball card
+player 1 played the fireball card
+player 1 won

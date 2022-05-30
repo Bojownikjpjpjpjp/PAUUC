@@ -1,8 +1,8 @@
-package attackCards;
+package AttackCards;
 
 import Wizard.Wizard;
 
-public abstract class attackCardBase extends cardbase.CardBase {
+public abstract class AttackCardBase extends cardbase.CardBase {
     public int damage;
     public int getDamage() {
         return damage;

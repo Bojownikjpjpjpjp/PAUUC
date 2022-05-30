@@ -1,7 +1,7 @@
 import java.util.Random;
-import cardbase.*;
-import attackCards.*;
-import spellCards.*;
+import AttackCards.*;
+import SpellCardsDefensive.ForceField;
+import SpellCardsOffensive.*;
 
 public class Hand {
     //public HashMap <Integer, cardVector> cardVectors = new HashMap<Integer, cardVector>();
@@ -13,7 +13,6 @@ public class Hand {
         cardVectors[2] = new cardVector();
         cardVectors[3] = new cardVector();
         setCardVectors(randomizeHand(getCardVectors()));
-        System.out.println("dupa "+ getCardVectors()[0].getBools()[0]);
         //setCardVectors(randomizeHand(getCardVectors()));
     }
 
@@ -29,7 +28,7 @@ public class Hand {
         Random randomizer = new Random();
         int rand;
         for(int i=0;i<4;i++){
-            rand=randomizer.nextInt(3);//random int od 0 do bound-1
+            rand=randomizer.nextInt(4);//random int od 0 do bound-1
             switch (rand){
                 case 0:
                     Punch p = new Punch();
@@ -41,7 +40,7 @@ public class Hand {
                     break;
                 case 1:
                     IceSpear ice = new IceSpear();
-                    hand[i].setSpellCardValues(ice);
+                    hand[i].setOffensiveSpellCardValues(ice);
                     /*hand[i].setIntValues(ice.getEnergyCost(),ice.getProvision(),ice.getTarget(),ice.getDamage());
                     hand[i].setDoubleValues(ice.getManaCost());
                     hand[i].setStrings(ice.getDescription(),ice.getImageLocalization());
@@ -49,7 +48,15 @@ public class Hand {
                     break;
                 case 2:
                     Fireball fire = new Fireball();
-                    hand[i].setSpellCardValues(fire);
+                    hand[i].setOffensiveSpellCardValues(fire);
+/*                    hand[i].setIntValues(fire.getEnergyCost(),fire.getProvision(),fire.getTarget(),fire.getDamage());
+                    hand[i].setDoubleValues(fire.getManaCost());
+                    hand[i].setStrings(fire.getDescription(),fire.getImageLocalization());
+                    hand[i].setBools(true,true,false,false,false);*/
+                    break;
+                    case 3:
+                    ForceField force = new ForceField();
+                    hand[i].setDefensiveSpellCardValues(force);
 /*                    hand[i].setIntValues(fire.getEnergyCost(),fire.getProvision(),fire.getTarget(),fire.getDamage());
                     hand[i].setDoubleValues(fire.getManaCost());
                     hand[i].setStrings(fire.getDescription(),fire.getImageLocalization());

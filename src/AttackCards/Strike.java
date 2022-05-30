@@ -1,6 +1,6 @@
-package attackCards;
+package AttackCards;
 
-public class Strike extends attackCardBase {
+public class Strike extends AttackCardBase {
     public Strike(){
         setProvision(10);
         setDamage(70);

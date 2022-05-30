@@ -1,7 +1,6 @@
 package Hero;
 
 public abstract class Hero {
-    // TODO: 26.05.2022 zrobić regeny
     public int healthPoint;
     public int energy;
     public int energyRegen;
@@ -47,7 +46,13 @@ public abstract class Hero {
         this.damageModifier = damageModifier;
     }
     public  void setArmorModifier(double armorModifier) {
-        this.armorModifier = armorModifier;
+        this.armorModifier += armorModifier;
+        if(this.armorModifier>80){
+            this.armorModifier=80;
+        }
+        else if (this.armorModifier<-200){
+            this.armorModifier=200;
+        }
     }
     public void setHeroCards(int[] heroCards) {
         this.heroCards = heroCards;

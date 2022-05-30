@@ -7,6 +7,7 @@ import Wizard.Wizard;
 public abstract class CardBase  {
     public String description;
     public String imageLocalization;
+    public String cardName;
     public int energyCost;
     public int provision;
     public int target;     //target==0 self, target==1 enemy
@@ -103,5 +104,11 @@ public abstract class CardBase  {
     }
     public String getImageLocalization() {
         return imageLocalization;
+    }
+    public void setCardName(String cardName) {
+        this.cardName = cardName;
+    }
+    public String getCardName() {
+        return cardName;
     }
 }

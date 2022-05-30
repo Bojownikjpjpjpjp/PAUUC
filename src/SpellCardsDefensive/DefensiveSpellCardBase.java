@@ -1,23 +1,25 @@
-package spellCards;
+package SpellCardsDefensive;
 
 import Hero.Hero;
 import Wizard.Wizard;
 
-public abstract class spellCardBase extends cardbase.CardBase {
+public abstract class DefensiveSpellCardBase extends cardbase.CardBase{
     public int manaCost;
-    public int damage;
+    public int armor;
+
+    public void setArmor(int armor) {
+        this.armor = armor;
+    }
+
+    public int getArmor() {
+        return armor;
+    }
 
     public void setManaCost(int manaCost) {
         this.manaCost = manaCost;
     }
-    public void setDamage(int damage) {
-        this.damage = damage;
-    }
     public int getManaCost() {
         return manaCost;
-    }
-    public int getDamage() {
-        return damage;
     }
     public boolean checkManaCost(double heroMana){//returning true if hero mana> required mana
         if (heroMana<this.manaCost) return false;
